@@ -1,0 +1,72 @@
+
+.giphyButton {
+  margin: 10px;
+  font-size: 20px;
+}
+
+label {
+  margin: 0px 20px;
+  font-size: 24px;
+  line-height: 60px;
+}
+
+#buttonRow {
+  line-height: 50px;
+  padding-left: 20px;
+  margin-top: 30px;
+  border: 2px solid red;
+}
+
+#giphyInput {
+  border: 1px solid #aaa;
+  width: 30%;
+}
+
+#addGiphy {
+  margin: 10px;
+  font-size: 20px;
+}
+
+#giphyColumn {
+  border: 2px solid green;
+}
+
+#giphyForm {
+  border: 2px solid blue;
+}
+
+@media only screen and (min-width : 320px) and (max-width: 480px) {
+  img {
+    margin: auto;
+    width: 100%;
+    height: auto;
+  }
+  .giphyButton {
+  font-size: 30px;
+  }
+  #addGiphy {
+  margin: 10px;
+  font-size: 20px;
+  }
+  #giphyInput {
+  width: 30%;
+}
+}
+
+/*@media only screen and (min-width : 680px) {
+  img {
+    margin: auto;
+    width: 100%;
+    height: auto;
+  }
+  .giphyButton {
+  font-size: 30px;
+  }
+  #addGiphy {
+  margin: 10px;
+  font-size: 20px;
+  }
+  #giphyInput {
+  width: 30%;
+}
+}*/

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+</head>
+
+<body>
+	<div id="mainContainer" class="container-fluid">
+  <!-- Button Row -->
+		<div id="buttonRow" class="row">
+    </div><br>
+  <!-- Lower Container -->
+    <div id="lowerContainer" class="row">
+  <!-- Giphy Column -->
+      <div id="giphyColumn" class="col-xs-12 col-sm-9 col-md-9 col-lg-8 col-xl-9 container container-fluid">
+      </div>
+  <!-- Form Column -->
+      <div id="formColumn" class="col-xs-12 col-sm-3 col-md-3 col-lg-4 col-xl-3">
+        <form id="giphyForm">
+          <label for="giphyInput">Add an animal</label>
+          <input type="text" id="giphyInput"><br>
+          <input id="addGiphy" class="btn btn-default" type="submit" value="Add a Giphy">
+        </form>
+      </div>
+    </div>
+	</div>
+<script type="text/javascript">
+  var giphyArray = ["cat","dog","hampster","horse","chipmunk"];
+
+  function displayGiphy() {
+    $("#giphyColumn").empty();
+    var newGiph = $(this).attr("data-name");
+    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + newGiph + "&api_key=125d9ce30bb54c32980055afd7cfc236&limit=10";
+
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).done(function(response) {
+      // var newDiv = $('<div>');
+      for (var i = 0; i < 10; i++) {
+        var x = response.data[i].images.original_still.url;
+        var p = $('<span>').html('<img src="' + x + '">');
+        // newDiv.append(p);
+        $('#giphyColumn').append(p);
+        console.log(response)
+        console.log(response.data);
+        console.log(response.data[i].images.original_still.url)
+      }
+    });
+  }
+
+  function renderButtons() {
+        $("#buttonRow").empty();
+        for (var i = 0; i < giphyArray.length; i++) {
+          var a = $("<button>");
+          a.addClass("giphyButton btn btn-default");
+          a.attr("data-name", giphyArray[i]);
+          a.text(giphyArray[i]);
+          $("#buttonRow").append(a);
+        }
+  }
+
+  $("#addGiphy").on("click", function(event) {
+        event.preventDefault();
+        var newGiph = $("#giphyInput").val().trim();
+        giphyArray.push(newGiph);
+        $("#giphyInput").val("");
+        renderButtons();
+      });
+
+  $(document).on("click", ".giphyButton", displayGiphy);
+  renderButtons();
+
+</script>
+<body>
+</html>
+<!-- api key = 125d9ce30bb54c32980055afd7cfc236 -->
