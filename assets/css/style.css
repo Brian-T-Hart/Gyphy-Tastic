@@ -1,3 +1,7 @@
+img {
+  width: 220px;
+  margin: 20px;
+}
 
 .giphyButton {
   margin: 10px;
@@ -14,28 +18,28 @@ label {
   line-height: 50px;
   padding-left: 20px;
   margin-top: 30px;
-  border: 2px solid red;
+  /*border: 2px solid red;*/
 }
 
 #giphyInput {
   border: 1px solid #aaa;
-  width: 30%;
+  width: 40%;
 }
 
 #addGiphy {
-  margin: 10px;
+  margin: 20px;
   font-size: 20px;
 }
 
 #giphyColumn {
-  border: 2px solid green;
+  /*border: 2px solid green;*/
 }
 
 #giphyForm {
-  border: 2px solid blue;
+  /*border: 2px solid blue;*/
 }
 
-@media only screen and (min-width : 320px) and (max-width: 480px) {
+@media only screen and (min-width : 320px) {
   img {
     margin: auto;
     width: 100%;
@@ -53,20 +57,23 @@ label {
 }
 }
 
-/*@media only screen and (min-width : 680px) {
+@media only screen and (min-width : 768px) {
   img {
     margin: auto;
     width: 100%;
     height: auto;
   }
-  .giphyButton {
-  font-size: 30px;
+
+@media only screen and (min-width : 992px) {
+  img {
+    margin: 20px;
+    width: 25%;
+    height: auto;
   }
-  #addGiphy {
-  margin: 10px;
-  font-size: 20px;
+
+  @media only screen and (min-width : 1200px) {
+  img {
+    margin: 20px;
+    width: 27%;
+    height: auto;
   }
-  #giphyInput {
-  width: 30%;
-}
-}*/
