@@ -1,11 +1,12 @@
-span {
+
+p {
   width: 100%;
-  height: auto;
+  text-align: center;
+  font-size: 14px;
 }
 
 img {
-  width: 98%;
-  max-height: 500px;
+  width: 90%;
   margin: 5px;
   border: 2px solid #ccc;
 }
@@ -31,36 +32,7 @@ img {
   font-family: 'Open Sans', sans-serif;
 }
 
-@media only screen and (min-width : 320px) {
-  span {
-    width: 100%;
-  }
-  image {
-    width: 98%;
-  }
+#giphyColumn>div {
+  width: 50%;
+  display: inline-block;
 }
-
-@media only screen and (min-width : 768px) {
- span {
-  width: 50%;
- }
- img {
-  width: 48%;
- }
-}
-
-@media only screen and (min-width : 992px) {
-  span {
-  width: 50%;
- }
-  img {
-    width: 48%;
-  }
-
-@media only screen and (min-width : 1200px) {
-  span {
-  width: 50%;
- }
-  img {
-    width: 48%;
-  }

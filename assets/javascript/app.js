@@ -12,6 +12,7 @@ var giphyArray = ["cat","dog","hampster","horse","pig","goat","cow","wombat","ti
       url: queryURL,
       method: "GET"
     }).done(function(response) {
+        console.log(response);
         var stillArray = [];
         var animateArray = [];
       for (var i = 0; i < 10; i++) {
@@ -19,7 +20,9 @@ var giphyArray = ["cat","dog","hampster","horse","pig","goat","cow","wombat","ti
         stillArray.push(stillUrl);
         var animateUrl = response.data[i].images.original.url;
         animateArray.push(animateUrl);
-        var s = $('<span>').html('<img id="' + i + '" data-state="still" src="' + stillUrl + '">');
+        var t = $('<p>').html('<p>Rating: ' + response.data[i].rating + '</p>')
+        var img = $('<img>').attr("id",i).attr("data-state", "still").attr("src", stillUrl)
+        var s = $('<div>').append(img).append(t);
         $('#giphyColumn').append(s);
       }
         $("img").on("click", function() {
