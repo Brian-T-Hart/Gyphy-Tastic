@@ -6,7 +6,7 @@ var giphyArray = ["cat","dog","hampster","horse","pig","goat","cow","wombat","ti
   function displayGiphy() {
     $("#giphyColumn").empty();
     var newGiph = $(this).attr("data-name");
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + newGiph + "&api_key=125d9ce30bb54c32980055afd7cfc236&limit=10";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + newGiph + "&api_key=125d9ce30bb54c32980055afd7cfc236&limit=10";
 
     $.ajax({
       url: queryURL,
